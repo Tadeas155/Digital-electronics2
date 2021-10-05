@@ -4,7 +4,7 @@
 
 #### Active-low and active-high LEDs
 
-1. Complete tables according to the AVR manual.
+###### 1. Complete tables according to the AVR manual.
 
 | **DDRB** | **Description** |
 | :-: | :-- |
@@ -23,7 +23,7 @@
 | 1 | 0 | output |no | Output Low (Sink) |
 | 1 | 1 | output | no | Output High (Source) |
 
-2. Part of the C code listing with syntax highlighting, which blinks alternately with a pair of LEDs; let one LED is connected to port B and the other to port C:
+###### 2. Part of the C code listing with syntax highlighting, which blinks alternately with a pair of LEDs/ Let one LED is connected to port B and the other to port C:
 
 ```c
 int main(void)
@@ -62,7 +62,7 @@ int main(void)
 ```
 
 
-### Push button
+##### Push button
 
 ```c
 int main(void)
