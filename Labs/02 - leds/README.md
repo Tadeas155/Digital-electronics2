@@ -1,4 +1,4 @@
-# Lab 2: Tadeáš Bařina
+## Lab 2: Tadeáš Bařina
 
    (https://github.com/Tadeas155/Digital-electronics2)
 
