@@ -2,7 +2,7 @@
 
    (https://github.com/Tadeas155/Digital-electronics2)
 
-### Active-low and active-high LEDs
+#### Active-low and active-high LEDs
 
 1. Complete tables according to the AVR manual.
 
