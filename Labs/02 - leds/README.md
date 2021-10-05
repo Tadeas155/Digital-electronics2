@@ -1,6 +1,6 @@
 ## Lab 2: Tadeáš Bařina
 
-   (https://github.com/Tadeas155/Digital-electronics2)
+   https://github.com/Tadeas155/Digital-electronics2
 
 #### Active-low and active-high LEDs
 
