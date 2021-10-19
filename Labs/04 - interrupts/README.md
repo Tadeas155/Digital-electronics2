@@ -16,8 +16,8 @@
 #### Timer library
 
 1. In your words, describe the difference between common C function and interrupt service routine.
-   * Function => function is invoked by execution of instructions, which perform the specific tasks. It can be called from anywhere in program.
-   * Interrupt service routine => interrupt is initiated by an internal or a external signal. After storing the current status of the program in the stack, the ISR is executed. ISR performs different types of tasks depending on the device which interrupted or instructions written by a programmer.
+* Function - function is invoked by execution of instructions, which perform the specific tasks. It can be called from anywhere in program.
+* Interrupt service routine - interrupt is initiated by an internal or a external signal. After storing the current status of the program in the stack, the ISR is executed. ISR performs different types of tasks depending on the device which interrupted or instructions written by a programmer.
 
 2. Part of the header file listing with syntax highlighting, which defines settings for Timer/Counter0:
 
