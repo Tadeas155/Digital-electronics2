@@ -28,20 +28,21 @@ Link to your `Digital-electronics-2` GitHub repository:
  * @note  F_CPU = 16 MHz
  */
 #define TIM0_stop()           TCCR0B &= ~((1<<CS02) | (1<<CS01) | (1<<CS00));
-/** @brief Set overflow 16u, prescaler 001 --> 1 */
-#define TIM0_overflow_16u()   TCCR0B &= ~((1<<CS02) | (1<<CS01)); TCCR1B |= (1<<CS00);
-/** @brief Set overflow 128u, prescaler 010 --> 8 */
-#define TIM0_overflow_128u()  TCCR0B &= ~((1<<CS02) | (1<<CS00)); TCCR1B |= (1<<CS01);
-/** @brief Set overflow 1024u, prescaler 011 --> 64 */
-#define TIM0_overflow_1024u() TCCR0B &= ~(1<<CS02); TCCR0B |= (1<<CS01) | (1<<CS00);
-/** @brief Set overflow 4096u, prescaler 100 --> 256 */
-#define TIM0_overflow_4096u()    TCCR0B &= ~((1<<CS01) | (1<<CS00)); TCCR1B |= (1<<CS02);
-/** @brief Set overflow 16384u, prescaler // 101 --> 1024 */
-#define TIM0_overflow_16384u()    TCCR0B &= ~(1<<CS01); TCCR0B |= (1<<CS02) | (1<<CS00);
+/** @brief Set overflow 4ms, prescaler 001 --> 1 */
+#define TIM0_overflow_4ms()   TCCR0B &= ~((1<<CS02) | (1<<CS01)); TCCR0B |= (1<<CS00);
+/** @brief Set overflow 33ms, prescaler 010 --> 8 */
+#define TIM0_overflow_33ms()  TCCR0B &= ~((1<<CS02) | (1<<CS00)); TCCR0B |= (1<<CS01);
+/** @brief Set overflow 262ms, prescaler 011 --> 64 */
+#define TIM0_overflow_262ms() TCCR0B &= ~(1<<CS02); TCCR0B |= (1<<CS01) | (1<<CS00);
+/** @brief Set overflow 1s, prescaler 100 --> 256 */
+#define TIM0_overflow_1s()    TCCR0B &= ~((1<<CS01) | (1<<CS00)); TCCR0B |= (1<<CS02);
+/** @brief Set overflow 4s, prescaler // 101 --> 1024 */
+#define TIM0_overflow_4s()    TCCR0B &= ~(1<<CS01); TCCR0B |= (1<<CS02) | (1<<CS00);
 /** @brief Enable overflow interrupt, 1 --> enable */
-#define TIM0_overflow_interrupt_enable()  TIMSK0 |= (1<<TOIE0);
+#define TIM0_overflow_interrupt_enable()  TIMSK1 |= (1<<TOIE1);
 /** @brief Disable overflow interrupt, 0 --> disable */
-#define TIM0_overflow_interrupt_disable() TIMSK0 &= ~(1<<TOIE0);
+#define TIM0_overflow_interrupt_disable() TIMSK1 &= ~(1<<TOIE1);
+/**
 
 ```
 
