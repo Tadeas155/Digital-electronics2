@@ -1,6 +1,5 @@
 ## Lab 4: Tadeáš Bařina
 
-Link to your `Digital-electronics-2` GitHub repository:
 
    https://github.com/Tadeas155/Digital-electronics2
 
