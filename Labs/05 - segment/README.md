@@ -12,6 +12,19 @@
 
 2. Code listing with syntax highlighting of two interrupt service routines (`TIMER0_OVF_vect`, `TIMER0_OVF_vect`) from counter application with at least two digits, ie. values from 00 to 59:
 
+   | **Digit** | **A** | **B** | **C** | **D** | **E** | **F** | **G** | **DP** |
+   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+   | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+   | 2 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 |
+   | 3 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+   | 4 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
+   | 5 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
+   | 6 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+   | 7 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+   | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+   | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
+
 
 ```c
 /**********************************************************************
@@ -60,19 +73,6 @@ ISR(TIMER0_OVF_vect)
 
 3. Flowchart figure for function `SEG_clk_2us()` which generates one clock period on `SEG_CLK` pin with a duration of 2&nbsp;us. The image can be drawn on a computer or by hand. Use clear descriptions of the individual steps of the algorithms.
 
-   
-   | **Digit** | **A** | **B** | **C** | **D** | **E** | **F** | **G** | **DP** |
-   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
-   | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-   | 2 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 |
-   | 3 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
-   | 4 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
-   | 5 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
-   | 6 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
-   | 7 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
-   | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-   | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
 
 
 ### Kitchen alarm
