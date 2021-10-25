@@ -12,6 +12,8 @@
 
 2. Code listing with syntax highlighting of two interrupt service routines (`TIMER0_OVF_vect`, `TIMER0_OVF_vect`) from counter application with at least two digits, ie. values from 00 to 59:
 
+### Truth table for display
+
    | **Digit** | **A** | **B** | **C** | **D** | **E** | **F** | **G** | **DP** |
    | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
