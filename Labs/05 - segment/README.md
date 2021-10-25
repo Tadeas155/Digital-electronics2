@@ -12,6 +12,7 @@
 
 2. Code listing with syntax highlighting of two interrupt service routines (`TIMER0_OVF_vect`, `TIMER0_OVF_vect`) from counter application with at least two digits, ie. values from 00 to 59:
 
+
 ```c
 /**********************************************************************
  * Function: Timer/Counter1 overflow interrupt
