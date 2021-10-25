@@ -18,7 +18,8 @@
 
 /*--------------------------------------------------------------------*/
 
-   
+volatile uint8_t cnt0 = 0;
+volatile uint8_t cnt1 = 0;
 
 
 /* Function definitions ----------------------------------------------*/
@@ -64,12 +65,37 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    static uint8_t val = 9;  // This line will only run the first time
-    // WRITE YOUR CODE HERE
-    val--;
-    if(val == 0)
-       val = 9;
-       
-    SEG_update_shift_regs(val, 0);
+	cnt0++;
+	
+	if(cnt0 > 9)
+	{
+		cnt0 = 0;
+		cnt1++;
+		if(cnt1 > 5)
+		{
+			cnt1 = 0;
+		}
+	 }
+
+}
+
+/**********************************************************************
+ * Function: Timer/Counter0 overflow interrupt
+ * Purpose:  Display tens and units of a counter at SSD.
+ **********************************************************************/
+ISR(TIMER0_OVF_vect)
+{
+    static uint8_t pos = 0;
+	
+    if(pos == 0)
+	{
+        SEG_update_shift_regs(cnt0, pos);
+        pos = 1;
+    }
+    else
+	{
+        SEG_update_shift_regs(cnt1, pos);
+        pos = 0;
+    }
 
 }
