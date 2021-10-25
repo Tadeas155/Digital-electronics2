@@ -1,8 +1,7 @@
-# Lab 5: YOUR_FIRSTNAME FAMILYNAME
+# Lab 5: Tadeáš Bařina
 
-Link to your `Digital-electronics-2` GitHub repository:
 
-   [https://github.com/...](https://github.com/...)
+   [https://github.com/...](https://github.com/Tadeas155/Digital-electronics2)
 
 
 ### 7-segment library
@@ -41,7 +40,19 @@ ISR(TIMER0_OVF_vect)
 
 3. Flowchart figure for function `SEG_clk_2us()` which generates one clock period on `SEG_CLK` pin with a duration of 2&nbsp;us. The image can be drawn on a computer or by hand. Use clear descriptions of the individual steps of the algorithms.
 
-   ![your figure]()
+   
+   | **Digit** | **A** | **B** | **C** | **D** | **E** | **F** | **G** | **DP** |
+   | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+   | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+   | 2 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 |
+   | 3 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 |
+   | 4 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
+   | 5 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
+   | 6 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+   | 7 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
+   | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+   | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
 
 
 ### Kitchen alarm
