@@ -1,6 +1,5 @@
-# Lab 5: YOUR_FIRSTNAME FAMILYNAME
+# Lab 5: Tadeáš Bařina
 
-Link to your `Digital-electronics-2` GitHub repository:
 
    [https://github.com/...](https://github.com/...)
 
