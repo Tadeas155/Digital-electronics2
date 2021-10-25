@@ -7,8 +7,8 @@
 ### 7-segment library
 
 1. In your words, describe the difference between Common Cathode and Common Anode 7-segment display.
-   * CC SSD
-   * CA SSD
+   * CC SSD common cathode has all the cathodes of the 7-segments connected directly together. For the use of this seven segment the common cathode connection must be grounded and power must be applied to appropriate segment in order to illuminate that segment.
+   * CA SSD common anode has all the anodes of the 7-segments connected together. Applying a ground to a particular segment connection (a-g), the appropriate segment will light up.
 
 2. Code listing with syntax highlighting of two interrupt service routines (`TIMER0_OVF_vect`, `TIMER0_OVF_vect`) from counter application with at least two digits, ie. values from 00 to 59:
 
