@@ -1,7 +1,7 @@
 # Lab 5: Tadeáš Bařina
 
 
-   [https://github.com/...](https://github.com/...)
+   [https://github.com/...](https://github.com/Tadeas155/Digital-electronics2)
 
 
 ### 7-segment library
