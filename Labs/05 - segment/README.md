@@ -75,7 +75,7 @@ ISR(TIMER0_OVF_vect)
 
 3. Flowchart figure for function `SEG_clk_2us()` which generates one clock period on `SEG_CLK` pin with a duration of 2&nbsp;us. The image can be drawn on a computer or by hand. Use clear descriptions of the individual steps of the algorithms.
 
-![your figure]()
+![your figure](https://github.com/Tadeas155/Digital-electronics2/blob/main/Labs/05%20-%20segment/Images/figure.png)
 
 ### Kitchen alarm
 
