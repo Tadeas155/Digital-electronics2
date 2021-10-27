@@ -7,8 +7,7 @@
 ### LCD display module
 
 1. In your words, describe what ASCII table is.
-   * ASCII character table, including descriptions of the first 32 characters. ASCII was originally designed for use with teletypes, and so the descriptions are somewhat obscure and their use is frequently not as intended.
-
+   * ASCII character table, including descriptions of the first 32 characters. 
 2. (Hand-drawn) picture of time signals between ATmega328P and LCD keypad shield (HD44780 driver) when transmitting three character data `De2`.
 
    ![your figure]()
