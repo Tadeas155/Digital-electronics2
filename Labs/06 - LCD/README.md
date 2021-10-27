@@ -1,7 +1,7 @@
 # Lab 6: Tadeáš Bařina
 
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/your-github-account/repository-name/lab_name](https://github.com/Tadeas155/Digital-electronics2/tree/main/Labs/06%20-%20LCD)
 
 
 ### LCD display module
