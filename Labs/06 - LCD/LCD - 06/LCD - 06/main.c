@@ -19,28 +19,23 @@
 
 
 uint8_t customChar[16] = {
-    0b11011,
+    0b11111,
+    0b00100,
+    0b11111,
+    0b11111,
     0b10101,
+    0b00011,
+    0b11100,
+    0b00011,
+    0b11111,
+    0b00101,
+    0b00000,
+    0b11111,
     0b10101,
     0b01010,
-    0b01010,
-    0b10101,
-    0b10101,
-    0b11011,
-    0b11011,
-    0b10101,
-    0b10101,
-    0b01010,
-    0b01010,
-    0b10101,
-    0b10101,
-    0b11011,
+    0b00000,
+    0b11111
 };
-
-
-
-
-
 
 int main(void)
 {
@@ -55,16 +50,13 @@ int main(void)
         lcd_data(customChar[i]);
     }
     // Set DDRAM address
-    lcd_command(1 << LCD_DDRAM);
+     lcd_command(1 << LCD_DDRAM);
     
     // Display first custom character
-    lcd_putc(0);
-    lcd_gotoxy(12, 0);
-    lcd_putc(0x01);
-
-       
-       
-       
+     lcd_putc(0);
+     lcd_gotoxy(12, 0);
+     lcd_putc(0x01);
+      
     // Put string(s) at LCD display
     lcd_gotoxy(1, 0);
     lcd_puts("00:00.0   a");
@@ -90,6 +82,38 @@ int main(void)
     // Will never reach this
     return 0;
 }
+/* Variables ---------------------------------------------------------*/
+// Custom character definition using https://omerk.github.io/lcdchargen/
+// uint8_t customChar[] = {
+    // addr 0: .....
+    //   0b00000, 0b00000, 0b00000, 0b00000, 0b00000, 0b00000, 0b00000, 0b00000,
+    // addr 1: |....
+    //   0b10000, 0b10000, 0b10000, 0b10000, 0b10000, 0b10000, 0b10000, 0b10000,
+    // addr 2: .....
+    //   0b11000, 0b11000, 0b11000, 0b11000, 0b11000, 0b11000, 0b11000, 0b11000,
+    // addr 3: .....
+    //   0b11100, 0b11100, 0b11100, 0b11100, 0b11100, 0b11100, 0b11100, 0b11100,
+    // addr 4: .....
+    //   0b11110, 0b11110, 0b11110, 0b11110, 0b11110, 0b11110, 0b11110, 0b11110,
+    // addr 5: .....
+    //   0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111,
+// };
+
+/*--------------------------------------------------------------------*/
+/**
+ * ISR starts when Timer/Counter0 overflows. Update the progress bar on
+ * LCD display every 16 ms.
+ */
+//ISR(TIMER0_OVF_vect)
+//{
+//    static uint8_t symbol = 0;
+//    static uint8_t position = 0;
+
+//    lcd_gotoxy(1 + position, 1);
+//    lcd_putc(symbol);
+
+    // WRITE YOUR CODE HERE
+//}
 
 /* Interrupt service routines ----------------------------------------*/
 /**********************************************************************
@@ -101,11 +125,11 @@ ISR(TIMER2_OVF_vect)
 {
     
     static uint8_t number_of_overflows = 0;
-    static uint8_t desetiny = 0;        // Tenths of a second
-    static uint8_t sek = 0;        // Seconds
+    static uint8_t desetiny = 0;     // Tenths of a second
+    static uint8_t sek = 0;          // Seconds
     static uint8_t minut = 0;        // Seconds
     static uint16_t squa = 0;
-    char lcd_string[2] = "  ";      // String for converting numbers by itoa()
+    char lcd_string[2] = "  ";       // String for converting numbers by itoa()
 
     number_of_overflows++;
     if (number_of_overflows >= 6)

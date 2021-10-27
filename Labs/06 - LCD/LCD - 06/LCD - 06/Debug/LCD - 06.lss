@@ -23,11 +23,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000198  00000000  00000000  00002a6c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000004e6  00000000  00000000  00002c04  2**0
+ 10 .debug_str    000004e3  00000000  00000000  00002c04  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000897  00000000  00000000  000030ea  2**0
+ 11 .debug_loc    00000897  00000000  00000000  000030e7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000a0  00000000  00000000  00003981  2**0
+ 12 .debug_ranges 000000a0  00000000  00000000  0000397e  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -330,7 +330,7 @@ void lcd_init(uint8_t dispAttr)
  1f2:	08 95       	ret
 
 000001f4 <main>:
-
+};
 
 int main(void)
 {
@@ -367,25 +367,22 @@ int main(void)
         lcd_data(customChar[i]);
     }
     // Set DDRAM address
-    lcd_command(1 << LCD_DDRAM);
+     lcd_command(1 << LCD_DDRAM);
  214:	80 e8       	ldi	r24, 0x80	; 128
  216:	0e 94 8e 00 	call	0x11c	; 0x11c <lcd_command>
     
     // Display first custom character
-    lcd_putc(0);
+     lcd_putc(0);
  21a:	80 e0       	ldi	r24, 0x00	; 0
  21c:	0e 94 a4 00 	call	0x148	; 0x148 <lcd_putc>
-    lcd_gotoxy(12, 0);
+     lcd_gotoxy(12, 0);
  220:	60 e0       	ldi	r22, 0x00	; 0
  222:	8c e0       	ldi	r24, 0x0C	; 12
  224:	0e 94 96 00 	call	0x12c	; 0x12c <lcd_gotoxy>
-    lcd_putc(0x01);
+     lcd_putc(0x01);
  228:	81 e0       	ldi	r24, 0x01	; 1
  22a:	0e 94 a4 00 	call	0x148	; 0x148 <lcd_putc>
-
-       
-       
-       
+      
     // Put string(s) at LCD display
     lcd_gotoxy(1, 0);
  22e:	60 e0       	ldi	r22, 0x00	; 0
@@ -455,11 +452,11 @@ ISR(TIMER2_OVF_vect)
  28e:	cd b7       	in	r28, 0x3d	; 61
  290:	de b7       	in	r29, 0x3e	; 62
     static uint8_t number_of_overflows = 0;
-    static uint8_t desetiny = 0;        // Tenths of a second
-    static uint8_t sek = 0;        // Seconds
+    static uint8_t desetiny = 0;     // Tenths of a second
+    static uint8_t sek = 0;          // Seconds
     static uint8_t minut = 0;        // Seconds
     static uint16_t squa = 0;
-    char lcd_string[2] = "  ";      // String for converting numbers by itoa()
+    char lcd_string[2] = "  ";       // String for converting numbers by itoa()
  292:	80 e2       	ldi	r24, 0x20	; 32
  294:	90 e2       	ldi	r25, 0x20	; 32
  296:	9a 83       	std	Y+2, r25	; 0x02
@@ -471,10 +468,10 @@ ISR(TIMER2_OVF_vect)
     if (number_of_overflows >= 6)
  2a0:	86 30       	cpi	r24, 0x06	; 6
  2a2:	18 f4       	brcc	.+6      	; 0x2aa <__vector_9+0x44>
-    static uint8_t sek = 0;        // Seconds
+    static uint8_t sek = 0;          // Seconds
     static uint8_t minut = 0;        // Seconds
     static uint16_t squa = 0;
-    char lcd_string[2] = "  ";      // String for converting numbers by itoa()
+    char lcd_string[2] = "  ";       // String for converting numbers by itoa()
 
     number_of_overflows++;
  2a4:	80 93 2f 01 	sts	0x012F, r24	; 0x80012f <number_of_overflows.1951>
