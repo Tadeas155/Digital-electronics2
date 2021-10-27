@@ -7,7 +7,7 @@
 ### LCD display module
 
 1. In your words, describe what ASCII table is.
-   * ASCII character table, including descriptions of the first 32 characters. 
+   * ASCII character table, including descriptions of the first 32 characters. Computers can only understand numbers, so an ASCII code is the numerical representation of a character such as 'a' or '@' or an action of some sort.
 2. (Hand-drawn) picture of time signals between ATmega328P and LCD keypad shield (HD44780 driver) when transmitting three character data `De2`.
 
    ![your figure]()
