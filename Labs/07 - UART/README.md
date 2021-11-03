@@ -12,7 +12,7 @@
    | :-: | :-: | :-: | :-: |
    | Right  | 0&nbsp;V | 0   |  |
    | Up     | 0.495&nbsp;V | 101 |  |
-   | Down   |       |     |  |
+   | Down   |   1.203 V    |     |  |
    | Left   |       |     |  |
    | Select |       |     |  |
    | none   |       |     |  |
