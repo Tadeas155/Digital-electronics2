@@ -72,7 +72,7 @@ ISR(ADC_vect)
    | **Function name** | **Function parameter(s)** | **Description** | **Example** |
    | :-- | :-- | :-- | :-- |
    | `uart_init` | `UART_BAUD_SELECT(9600, F_CPU)` | Initialize UART to 8N1 and set baudrate to 9600&nbsp;Bd | `uart_init(UART_BAUD_SELECT(9600, F_CPU));` |
-   | `uart_getc` |  | Get received byte from ringbuffer. |
+   | `uart_getc` | 0 successfully received data from UART | Get received byte from ringbuffer. |
    | `uart_putc` | data	byte to be transmitted | Put byte to ringbuffer for transmitting via UART. |
    | `uart_puts` | s	string to be transmitted | Put string to ringbuffer for transmitting via UART. |
 
