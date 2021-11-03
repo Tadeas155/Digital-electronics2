@@ -13,9 +13,9 @@
    | Right  | 0&nbsp;V | 0   |  |
    | Up     | 0.495&nbsp;V | 101 |  |
    | Down   |   1.203 V    |     |  |
-   | Left   |       |     |  |
-   | Select |       |     |  |
-   | none   |       |     |  |
+   | Left   |   1.969 V    |     |  |
+   | Select |   3.182 V    |     |  |
+   | none   |    5 V   |     |  |
 
 2. Code listing of ACD interrupt service routine for sending data to the LCD/UART and identification of the pressed button. Always use syntax highlighting and meaningful comments:
 
