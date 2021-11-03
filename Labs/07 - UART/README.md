@@ -69,6 +69,13 @@ ISR(ADC_vect)
 
 ### UART communication
 
+   | **Function name** | **Function parameter(s)** | **Description** | **Example** |
+   | :-- | :-- | :-- | :-- |
+   | `uart_init` | `UART_BAUD_SELECT(9600, F_CPU)` | Initialize UART to 8N1 and set baudrate to 9600&nbsp;Bd | `uart_init(UART_BAUD_SELECT(9600, F_CPU));` |
+   | `uart_getc` |  |  |
+   | `uart_putc` |  |  |
+   | `uart_puts` |  |  |
+
 1. (Hand-drawn) picture of UART signal when transmitting three character data `De2` in 4800 7O2 mode (7 data bits, odd parity, 2 stop bits, 4800&nbsp;Bd).
 
    ![your figure]()
