@@ -153,6 +153,6 @@ ISR(ADC_vect)
 
     uart_puts(lcd_string);
     uart_puts("    ");
-        // B je na hodnotì 13
+  
     
 }
