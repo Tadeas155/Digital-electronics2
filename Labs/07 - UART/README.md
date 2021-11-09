@@ -36,33 +36,32 @@
  **********************************************************************/
 ISR(ADC_vect)
 {
+    // WRITE YOUR CODE HERE
     uint16_t value = 0;
     char lcd_string[4] = "0000";
-
-    value = ADC;                  // Copy ADC result to 16-bit variable
-    itoa(value, lcd_string, 10);  // Convert decimal value to string
     
-    lcd_gotoxy(8,0);
+    value = ADC;
+    
+    lcd_gotoxy(8, 0);    
     lcd_puts("    ");
-    lcd_gotoxy(8,0);
+    
+    lcd_gotoxy(13, 0);
+    lcd_puts("   ");
+    
+    
+    itoa(value, lcd_string, 10);
+    lcd_gotoxy(8, 0);
     lcd_puts(lcd_string);
     
-}
+    itoa(value, lcd_string, 16);
+    lcd_gotoxy(13, 0);
+    lcd_puts(lcd_string); 
+    
 
-/**********************************************************************
- * Function: ADC complete interrupt
- * Purpose:  Display value on LCD and send it to UART.
- **********************************************************************/
-ISR(ADC_vect)
-{
-    uint16_t value = 0;
-    char lcd_string[4] = "0000";
-
-    value = ADC;                  // Copy ADC result to 16-bit variable
-    itoa(value, lcd_string, 10);  // Convert decimal value to string
-
-    // WRITE YOUR CODE HERE
-
+    uart_puts(lcd_string);
+    uart_puts("    ");
+  
+    
 }
 ```
 
