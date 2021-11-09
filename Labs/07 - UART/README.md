@@ -21,11 +21,11 @@
    | :-- | :-: | :-: | :-- |
    | Voltage reference    | ADMUX | REFS1:0 | 00: ..., 01: AVcc voltage reference (5V), ... |
    | Input channel        | ADMUX | MUX3:0 | 0000: ADC0, 0001: ADC1, ... |
-   | ADC enable           | ADCSRA |  |  |
-   | Start conversion     |  |  |  |
-   | ADC interrupt enable |  |  |  |
-   | ADC clock prescaler  |  | ADPS2:0 | 000: Division factor 2, 001: 2, 010: 4, ...|
-   | ADC 10-bit result    |  |  |  |
+   | ADC enable           | ADCSRA | ADEN | 1: ADC ENABLE, 0: ADC DISABLE |
+   | Start conversion     | ADCSRA | ADSC | 1: Start conversion, when conversion complete returns to zero |
+   | ADC interrupt enable | ADCRSA | ADIE | 1: FIRST BIT IN SREG is set and the ADC conversion complete interrupt is activated |
+   | ADC clock prescaler  | ADCRSA | ADPS2:0 | 000: Division factor 2, 001: 2, 010: 4, ...|
+   | ADC 10-bit result    | ADC | ADCL7:0 / ADCH7:0 | Conversion result |
 
 2. Code listing of ACD interrupt service routine for sending data to the LCD/UART and identification of the pressed button. Always use syntax highlighting and meaningful comments:
 
