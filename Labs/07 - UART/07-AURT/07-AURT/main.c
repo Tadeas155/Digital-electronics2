@@ -18,6 +18,8 @@
 #include <stdlib.h>         // C library. Needed for conversion function
 #include "uart.h"           // Peter Fleury's UART library
 
+#define F_CPU 16000000
+
 /* Function definitions ----------------------------------------------*/
 /**********************************************************************
  * Function: Main function where the program execution begins
@@ -31,9 +33,9 @@ int main(void)
     lcd_init(LCD_DISP_ON);
     lcd_gotoxy(1, 0); lcd_puts("value:");
     lcd_gotoxy(3, 1); lcd_puts("key:");
-    lcd_gotoxy(8, 0); lcd_puts("a");    // Put ADC value in decimal
-    lcd_gotoxy(13,0); lcd_puts("b");    // Put ADC value in hexadecimal
-    lcd_gotoxy(8, 1); lcd_puts("c");    // Put button name here
+    lcd_gotoxy(8, 0); lcd_puts("1023");    // Put ADC value in decimal
+    lcd_gotoxy(13,0); lcd_puts("3ff");     // Put ADC value in hexadecimal
+    lcd_gotoxy(8, 1); lcd_puts("none");    // Put button name here
 
     // Configure ADC to convert PC0[A0] analog value
     // Set ADC reference to AVcc
@@ -47,12 +49,12 @@ int main(void)
     // Set clock prescaler to 128
     ADCSRA  |=  (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0);
     // Configure 16-bit Timer/Counter1 to start ADC conversion
-//    uart_init(UART_BAUD_SELECT(9600, F_CPU));
+    //    uart_init(UART_BAUD_SELECT(9600, F_CPU));
     // Set prescaler to 262 ms and enable overflow interrupt
     TIM1_overflow_262ms();
     TIM1_overflow_interrupt_enable();
     // Initialize UART to asynchronous, 8N1, 9600
-
+    uart_init(UART_BAUD_SELECT(9600, F_CPU));
     // Enables interrupts by setting the global interrupt mask
     sei();
 
@@ -75,8 +77,8 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    // Start ADC conversion
-    ADCSRA |= (1<<ADSC);
+     // Start ADC conversion
+     ADCSRA |= (1<<ADSC);
 
 }
 
@@ -86,12 +88,33 @@ ISR(TIMER1_OVF_vect)
  **********************************************************************/
 ISR(ADC_vect)
 {
-    // WRITE YOUR CODE HERE
     uint16_t value = 0;
     char lcd_string[4] = "0000";
+
+    value = ADC;                  // Copy ADC result to 16-bit variable
+    itoa(value, lcd_string, 10);  // Convert decimal value to string
     
-    value = ADC;
+    lcd_gotoxy(8, 0);
+    lcd_puts("    ");
     
+    lcd_gotoxy(13, 0);
+    lcd_puts("   ");
+    
+    
+    itoa(value, lcd_string, 10);
+    lcd_gotoxy(8, 0);
+    lcd_puts(lcd_string);
+    
+    itoa(value, lcd_string, 16);
+    lcd_gotoxy(13, 0);
+    lcd_puts(lcd_string);
+    
+
+    uart_puts(lcd_string);
+    uart_puts("\r\n");
+    
+}
+
 /*    
     if (value <= 900)
         {
@@ -131,28 +154,4 @@ ISR(ADC_vect)
             lcd_gotoxy(8,1)
             lcd_puts("NO")
         }
-*/        
-    
-    
-    
-    lcd_gotoxy(8, 0);    
-    lcd_puts("    ");
-    
-    lcd_gotoxy(13, 0);
-    lcd_puts("   ");
-    
-    
-    itoa(value, lcd_string, 10);
-    lcd_gotoxy(8, 0);
-    lcd_puts(lcd_string);
-    
-    itoa(value, lcd_string, 16);
-    lcd_gotoxy(13, 0);
-    lcd_puts(lcd_string); 
-    
-
-    uart_puts(lcd_string);
-    uart_puts("    ");
-        // B je na hodnotì 13
-    
-}
+ */   
