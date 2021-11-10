@@ -154,4 +154,32 @@ ISR(ADC_vect)
             lcd_gotoxy(8,1)
             lcd_puts("NO")
         }
+<<<<<<< HEAD
  */   
+=======
+*/        
+    
+    
+    
+    lcd_gotoxy(8, 0);    
+    lcd_puts("    ");
+    
+    lcd_gotoxy(13, 0);
+    lcd_puts("   ");
+    
+    
+    itoa(value, lcd_string, 10);
+    lcd_gotoxy(8, 0);
+    lcd_puts(lcd_string);
+    
+    itoa(value, lcd_string, 16);
+    lcd_gotoxy(13, 0);
+    lcd_puts(lcd_string); 
+    
+
+    uart_puts(lcd_string);
+    uart_puts("    ");
+  
+    
+}
+>>>>>>> eca8232e21f83ef084ba35168e8c52a3ffb70ce9
