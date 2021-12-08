@@ -40,6 +40,6 @@ GitHub repository:
    | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
    
    
-Libraries description
+References
 
 (https://github.com/tomas-fryza/Digital-electronics-2/blob/master/Docs/arduino_shield.pdf)
