@@ -43,7 +43,10 @@ GitHub repository:
 References
 
 https://github.com/tomas-fryza/Digital-electronics-2/blob/master/Docs/arduino_shield.pdf
+
 https://github.com/alexander-bekec/de2-project/blob/main/Project/sources/DHT12_humidity_temperature_sensor_datasheet.pdf
+
 https://github.com/alexander-bekec/de2-project/blob/main/Project/sources/GL5549_SENBA.pdf
+
 https://github.com/alexander-bekec/de2-project/blob/main/Project/sources/capacitive_soil_moisture_sensor_datasheet.pdf
 
