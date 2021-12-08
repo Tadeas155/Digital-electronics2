@@ -38,3 +38,8 @@ GitHub repository:
    | 7 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 |
    | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
    | 9 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
+   
+   
+Libraries description
+
+(https://github.com/tomas-fryza/Digital-electronics-2/blob/master/Docs/arduino_shield.pdf)
