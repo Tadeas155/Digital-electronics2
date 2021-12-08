@@ -42,4 +42,4 @@ GitHub repository:
    
 References
 
-(https://github.com/tomas-fryza/Digital-electronics-2/blob/master/Docs/arduino_shield.pdf)
+https://github.com/tomas-fryza/Digital-electronics-2/blob/master/Docs/arduino_shield.pdf
